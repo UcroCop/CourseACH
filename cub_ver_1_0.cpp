@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <malloc.h>
 
-//откаты на зигзаги
+//РѕС‚РєР°С‚С‹ РЅР° Р·РёРіР·Р°РіРё
 int** zzHOR_11(int** a, int* i, int* j, int* k) {
 	*i -= 9;
 	a[*j][(*k)--] = 0;
@@ -44,12 +44,6 @@ int** zzHOR_33(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)++] = 0;
 	a[*j][(*k)++] = 0;
 	a[*j][*k] = 0;
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 9; j++)
-			printf("%3d ", a[i][j]);
-		printf("\n");
-	}
-	printf("\n");
 	return a;
 }
 int** zzHOR_44(int** a, int* i, int* j, int* k) {
@@ -123,7 +117,7 @@ int** zzVER_44(int** a, int* i, int* j, int* k) {
 	return a;
 }
 
-//откаты на центровые
+//РѕС‚РєР°С‚С‹ РЅР° С†РµРЅС‚СЂРѕРІС‹Рµ
 int** c_11(int** a, int* i, int* j, int* k) {
 	*i -= 9;
 	a[*j][(*k)++] = 0;
@@ -149,7 +143,7 @@ int** c_22(int** a, int* i, int* j, int* k) {
 	a[(*j)++][*k] = 0;
 	a[*j][(*k)++] = 0;
 	a[(*j)--][*k] = 0;
-	
+
 
 	a[*j][*k] = 0;
 
@@ -167,7 +161,6 @@ int** c_33(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)--] = 0;
 
 	a[*j][*k] = 0;
-
 	return a;
 }
 int** c_44(int** a, int* i, int* j, int* k) {
@@ -196,12 +189,6 @@ int** c_55(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)--] = 0;
 	a[(*j)++][*k] = 0;
 	a[*j][*k] = 0;
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 9; j++)
-			printf("%3d ", a[i][j]);
-		printf("\n");
-	}
-	printf("\n");
 	return a;
 }
 int** c_66(int** a, int* i, int* j, int* k) {
@@ -247,7 +234,7 @@ int** c_88(int** a, int* i, int* j, int* k) {
 	return a;
 }
 
-//откаты на обходные
+//РѕС‚РєР°С‚С‹ РЅР° РѕР±С…РѕРґРЅС‹Рµ
 int** o_11(int** a, int* i, int* j, int* k) {
 	*i -= 9;
 	a[(*j)++][*k] = 0;
@@ -272,7 +259,7 @@ int** o_22(int** a, int* i, int* j, int* k) {
 	a[(*j)++][*k] = 0;
 	a[*j][(*k)++] = 0;
 	a[*j][(*k)++] = 0;
-	
+
 	a[*j][*k] = 0;
 
 	return a;
@@ -293,16 +280,15 @@ int** o_33(int** a, int* i, int* j, int* k) {
 }
 int** o_44(int** a, int* i, int* j, int* k) {
 	*i -= 9;
-	a[*j][(*k)++] = (*i)++;
-	a[(*j)++][*k] = (*i)++;
-	a[*j][(*k)--] = (*i)++;
-	a[(*j)++][*k] = (*i)++;
-	a[*j][(*k)++] = (*i)++;
-	a[*j][(*k)++] = (*i)++;
-	a[(*j)--][*k] = (*i)++;
-	a[(*j)--][*k] = (*i)++;
+	a[*j][(*k)++] = 0;
+	a[(*j)++][*k] = 0;
+	a[*j][(*k)--] = 0;
+	a[(*j)++][*k] = 0;
+	a[*j][(*k)++] = 0;
+	a[*j][(*k)++] = 0;
+	a[(*j)--][*k] = 0;
+	a[(*j)--][*k] = 0;
 	a[*j][*k] = 0;
-
 	return a;
 }
 int** o_55(int** a, int* i, int* j, int* k) {
@@ -330,7 +316,6 @@ int** o_66(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)++] = 0;
 	a[*j][(*k)++] = 0;
 	a[*j][*k] = 0;
-
 	return a;
 }
 int** o_77(int** a, int* i, int* j, int* k) {
@@ -357,14 +342,14 @@ int** o_88(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)--] = 0;
 	a[(*j)--][*k] = 0;
 	a[(*j)--][*k] = 0;
-	
+
 	a[*j][*k] = 0;
 
 	return a;
 }
 
 
-//зигзаги
+//Р·РёРіР·Р°РіРё
 int** zzHOR_1(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)++] = (*i)++;
 	a[*j][(*k)++] = (*i)++;
@@ -470,7 +455,7 @@ int** zzVER_4(int** a, int* i, int* j, int* k) {
 	return a;
 }
 
-//центровые
+//С†РµРЅС‚СЂРѕРІС‹Рµ
 int** c_1(int** a, int* i, int* j, int* k) {
 	a[(*j)++][*k] = (*i)++;
 	a[*j][(*k)++] = (*i)++;
@@ -576,7 +561,7 @@ int** c_8(int** a, int* i, int* j, int* k) {
 	return a;
 }
 
-//обходные
+//РѕР±С…РѕРґРЅС‹Рµ
 int** o_1(int** a, int* i, int* j, int* k) {
 	a[*j][(*k)++] = (*i)++;
 	a[*j][(*k)++] = (*i)++;
@@ -683,491 +668,1024 @@ int** o_8(int** a, int* i, int* j, int* k) {
 }
 
 
-int cub_9(int** table, int flag, int i, int j, int k, int n, int* sum) {
-	for (int i = 0; i < n; i++) {
+int cub_9(int** table, int flag, int i, int j, int k, int n, int* sum, int** tab, int I, int J, int K) {
+	/*for (int i = 0; i < n; i++) {
 		for (int j = 0; j < n; j++)
 			printf("%3d ", table[i][j]);
 		printf("\n");
 	}
-	printf("\n");
+	printf("\n flag = %d\n", flag);*/
 	int f;
-	//вызовы паттернов
-	if (*sum != 9 && table[0][n - 1] == 0) {
-		//центровыe
-		if (flag == 13 || flag == 27) {
-			if (flag == 13 && k != n - 1 && table[j][k + 1] == 0) {
-				k++;
+
+
+	//РІС‹Р·РѕРІС‹ РїР°С‚С‚РµСЂРЅРѕРІ (n<10)
+	if (tab != 0) {
+		if (*sum != 9 && table[0][n - 1] == 0) {
+			//С†РµРЅС‚СЂРѕРІС‹e
+			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
+				if (table[0][n - 1] != n * n && flag == 13 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+					k++;
+					K++;
+					c_1(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+					j++;
+					J++;
+					c_1(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_11(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 13) {
+						K--;
+						k--;
+					}
+					else {
+						J--;
+						j--;
+					}
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 17 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+				j++;
+				J++;
 				c_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_11(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
 			}
-			else if (j != n - 1 && table[j + 1][k] == 0) {
-				j++;
-				c_1(table, &i, &j, &k);
+			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
+				if (table[0][n - 1] != n * n && flag == 13 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+					k++;
+					K++;
+					c_4(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+					j++;
+					J++;
+					c_4(table, &i, &j, &k);
+				}
+
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_44(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 13) {
+						K--;
+						k--;
+					}
+					else {
+						J--;
+						j--;
+					}
+				}
 			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 17, i, j, k, n, sum);
-			if (flag == -1) {
-				c_11(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 13) k--;
-				else j--;
-			}
-		}
-		if (flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			c_1(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 47, i, j, k, n, sum);
-			if (flag == -1) {
-				c_11(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 13 || flag == 27) {
-			if (flag == 13 && k != n - 1 && table[j][k + 1] == 0) {
+			if (table[0][n - 1] != n * n && flag == 23 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 				k++;
+				K++;
 				c_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_44(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
 			}
-			else if (j != n - 1 && table[j + 1][k] == 0) {
+			if (table[0][n - 1] != n * n && flag == 29 || flag == 31) {
+				if (table[0][n - 1] != n * n && flag == 31 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+					k--;
+					K--;
+					c_2(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+					j++;
+					J++;
+					c_2(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_22(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 31) {
+						K++;
+						k++;
+					}
+					else {
+						J--;
+						j--;
+					}
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 39 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
 				j++;
-				c_4(table, &i, &j, &k);
-			}
-
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 23, i, j, k, n, sum);
-			if (flag == -1) {
-				c_44(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 13) k--;
-				else j--;
-			}
-		}
-		if (flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			c_4(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 33, i, j, k, n, sum);
-			if (flag == -1) {
-				c_44(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 29 || flag == 31) {
-			if (flag == 31 && k != 0 && table[j][k - 1] == 0) {
-				k--;
+				J++;
 				c_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_22(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
 			}
-			else if (j != n - 1 && table[j + 1][k] == 0) {
-				j++;
-				c_2(table, &i, &j, &k);
+			if (table[0][n - 1] != n * n && flag == 29 || flag == 31) {
+				if (table[0][n - 1] != n * n && flag == 31 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+					k--;
+					K--;
+					c_8(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+					j++;
+					J++;
+					c_8(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_88(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 31) {
+						K--;
+						k++;
+					}
+					else {
+						J--;
+						j--;
+					}
+				}
 			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 39, i, j, k, n, sum);
-			if (flag == -1) {
-				c_22(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 31) k++;
-				else j--;
-			}
-		}
-		if (flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			c_2(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 49, i, j, k, n, sum);
-			if (flag == -1) {
-				c_22(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 29 || flag == 31) {
-			if (flag == 13 && k != 0 && table[j][k - 1] == 0) {
+			if (table[0][n - 1] != n * n && flag == 21 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
 				k--;
+				K--;
 				c_8(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_88(table, &i, &j, &k);
+					*sum += 9;
+					K++;
+					k++;
+				}
 			}
-			else if (j != n - 1 && table[j + 1][k] == 0) {
-				j++;
-				c_8(table, &i, &j, &k);
+			if (table[0][n - 1] != n * n && flag == 19 || flag == 41) {
+				if (table[0][n - 1] != n * n && flag == 19 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+					k++;
+					K++;
+					c_3(table, &i, &j, &k);
+				}
+				else if (j != 0 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+					j--;
+					J--;
+					c_3(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_33(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 19) {
+						K--;
+						k--;
+					}
+					else {
+						J++;
+						j++;
+					}
+				}
 			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 21, i, j, k, n, sum);
-			if (flag == -1) {
-				c_88(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 13) k++;
-				else j--;
-			}
-		}
-		if (flag == 21 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			c_8(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 11, i, j, k, n, sum);
-			if (flag == -1) {
-				c_88(table, &i, &j, &k);
-				*sum += 9;
+			if (table[0][n - 1] != n * n && flag == 49 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 				k++;
-			}
-		}
-		if (flag == 19 || flag == 41) {
-			if (flag == 19 && k != n - 1 && table[j][k + 1] == 0) {
-				k++;
+				K++;
 				c_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_33(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
 			}
-			else if (j != 0 && table[j - 1][k] == 0) {
+			if (table[0][n - 1] != n * n && flag == 19 || flag == 41) {
+				if (table[0][n - 1] != n * n && flag == 19 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+					k++;
+					K++;
+					c_5(table, &i, &j, &k);
+				}
+				else if (j != 0 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+					j--;
+					J--;
+					c_5(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_55(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 19) {
+						K--;
+						k--;
+					}
+					else {
+						J++;
+						j++;
+					}
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
 				j--;
-				c_3(table, &i, &j, &k);
-			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 49, i, j, k, n, sum);
-			if (flag == -1) {
-				c_33(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 19) k--;
-				else j++;
-			}
-		}
-		if (flag == 47 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			c_3(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 39, i, j, k, n, sum);
-			if (flag == -1) {
-				c_33(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 19 || flag == 41) {
-			if (flag == 19 && k != n - 1 && table[j][k + 1] == 0) {
-				k++;
+				J--;
 				c_5(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_55(table, &i, &j, &k);
+					j++;
+					J++;
+					*sum += 9;
+				}
 			}
-			else if (j != 0 && table[j - 1][k] == 0) {
+			if (table[0][n - 1] != n * n && flag == 43 || flag == 37) {
+				if (table[0][n - 1] != n * n && flag == 37 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+					k--;
+					K--;
+					c_6(table, &i, &j, &k);
+				}
+				else if (j != 0 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+					j--;
+					J--;
+					c_6(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_66(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 37) {
+						K++;
+						k++;
+					}
+					else {
+						J++;
+						j++;
+					}
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 33 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
 				j--;
-				c_5(table, &i, &j, &k);
-			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 11, i, j, k, n, sum);
-			if (flag == -1) {
-				c_55(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 19) k--;
-				else j++;
-			}
-		}
-		if (flag == 11 && j != 0 && table[j - 1][k] == 0) {
-			j--;
-			c_5(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 21, i, j, k, n, sum);
-			if (flag == -1) {
-				c_55(table, &i, &j, &k);
-				j++;
-				*sum += 9;
-			}
-		}
-		if (flag == 43 || flag == 37) {
-			if (flag == 37 && k != 0 && table[j][k - 1] == 0) {
-				k--;
+				J--;
 				c_6(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_66(table, &i, &j, &k);
+					*sum += 9;
+					j++;
+					J++;
+				}
 			}
-			else if (j != 0 && table[j - 1][k] == 0) {
-				j--;
-				c_6(table, &i, &j, &k);
+			if (table[0][n - 1] != n * n && flag == 43 || flag == 37) {
+				if (table[0][n - 1] != n * n && flag == 37 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+					k--;
+					K--;
+					c_7(table, &i, &j, &k);
+				}
+				else if (j != 0 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+					j--;
+					J--;
+					c_7(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_77(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 37) {
+						K++;
+						k++;
+					}
+					else {
+						J++;
+						j++;
+					}
+				}
 			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 33, i, j, k, n, sum);
-			if (flag == -1) {
-				c_66(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 37) k++;
-				else j++;
-			}
-		}
-		if (flag == 33 && j != 0 && table[j - 1][k] != 0) {
-			j--;
-			c_6(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 23, i, j, k, n, sum);
-			if (flag == -1) {
-				c_66(table, &i, &j, &k);
-				*sum += 9;
-				j++;
-			}
-		}
-		if (flag == 43 || flag == 37) {
-			if (flag == 37 && k != 0 && table[j][k - 1] == 0) {
+			if (table[0][n - 1] != n * n && flag == 47 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
 				k--;
+				K--;
 				c_7(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					c_77(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+					K++;
+				}
 			}
-			else if (j != 0 && table[j - 1][k] == 0) {
+
+			//Р·РёРіР·Р°РіРё
+			if (table[0][n - 1] != n * n && flag == 17 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+				j++;
+				J++;
+				zzHOR_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzHOR_11(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
 				j--;
-				c_7(table, &i, &j, &k);
+				J--;
+				zzHOR_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzHOR_22(table, &i, &j, &k);
+					j++;
+					J++;
+					*sum += 9;
+				}
 			}
-			*sum -= 9;
-			f = flag;
-			flag = cub_9(table, 47, i, j, k, n, sum);
-			if (flag = -1) {
-				c_77(table, &i, &j, &k);
-				*sum += 9;
-				if (f == 37) k++;
-				else j++;
+			if (table[0][n - 1] != n * n && flag == 33 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+				j--;
+				J--;
+				zzHOR_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzHOR_33(table, &i, &j, &k);
+					j++;
+					J++;
+					*sum += 9;
+				}
 			}
-		}
-		if (flag == 47 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			c_7(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 17, i, j, k, n, sum);
-			if (flag == -1) {
-				c_77(table, &i, &j, &k);
-				*sum += 9;
+			if (table[0][n - 1] != n * n && flag == 39 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+				j++;
+				J++;
+				zzHOR_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzHOR_44(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 				k++;
+				K++;
+				zzVER_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzVER_11(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 49 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+				k++;
+				K++;
+				zzVER_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzVER_22(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 47 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+				k--;
+				K--;
+				zzVER_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzVER_33(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+					K++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 21 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+				k--;
+				K--;
+				zzVER_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					zzVER_44(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+					K++;
+				}
+			}
+
+			//РѕР±С…РѕРґРЅС‹Рµ 
+			if (table[0][n - 1] != n * n && flag == 49 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+				k++;
+				K++;
+				o_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_11(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 47 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+				k--;
+				K--;
+				o_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_22(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+					K++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 33 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+				j--;
+				J--;
+				o_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_33(table, &i, &j, &k);
+					*sum += 9;
+					j++;
+					J++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 39 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+				j++;
+				J++;
+				o_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_44(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
+				k++;
+				K++;
+				o_5(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_55(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+					K--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 21 && K != 0 && tab[J][K - 1] - tab[J][K] == 1) {
+				k--;
+				K--;
+				o_6(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_66(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+					K++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
+				j--;
+				J--;
+				o_7(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_77(table, &i, &j, &k);
+					*sum += 9;
+					J++;
+					j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 17 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
+				j++;
+				J++;
+				o_8(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n*n) {
+					o_88(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+					J--;
+				}
 			}
 		}
 
-		//зигзаги
-		if (flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			zzHOR_1(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 39, i, j, k, n, sum);
-			if (flag == -1) {
-				zzHOR_11(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 11 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			zzHOR_2(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 33, i, j, k, n, sum);
-			if (flag == -1) {
-				zzHOR_22(table, &i, &j, &k);
-				j--;
-				*sum += 9;
-			}
-		}
-		if (flag == 33 && j != 0 && table[j - 1][k] == 0) {
+		//РїРѕСЃР»РµРґРЅРёР№ РєРІР°РґСЂР°РЅС‚
+		else if (*sum == 9) {
+		if (table[0][n - 1] != n * n && flag == 33 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
 			j--;
-			zzHOR_3(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 11, i, j, k, n, sum);
-			if (flag == -1) {
-				zzHOR_33(table, &i, &j, &k);
-				j++;
-				*sum += 9;
-			}
-		}
-		if (flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			zzHOR_4(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 17, i, j, k, n, sum);
-			if (flag == -1) {
-				zzHOR_44(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			zzVER_1(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 49, i, j, k, n, sum);
-			if (flag == -1) {
-				zzVER_11(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			zzVER_2(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 23, i, j, k, n, sum);
-			if (flag == -1) {
-				zzVER_22(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 47 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			zzVER_3(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 21, i, j, k, n, sum);
-			if (flag == -1) {
-				zzVER_33(table, &i, &j, &k);
-				*sum += 9;
-				k++;
-			}
-		}
-		if (flag == 21 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			zzVER_4(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 47, i, j, k, n, sum);
-			if (flag == -1) {
-				zzVER_44(table, &i, &j, &k);
-				*sum += 9;
-				k++;
-			}
-		}
-
-		//обходные 
-		if (flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			o_1(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 11, i, j, k, n, sum);
-			if (flag == -1) {
-				o_11(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 47 && k != 0 && table[j][k - 1] == 0) {
-			k--;
+			J--;
 			o_2(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 33, i, j, k, n, sum);
-			if (flag == -1) {
-				o_22(table, &i, &j, &k);
-				*sum += 9;
-				k++;
-			}
+			flag = 3;
 		}
-		if (flag == 33 && j != 0 && table[j - 1][k] == 0) {
-			j--;
-			o_3(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 47, i, j, k, n, sum);
-			if (flag == -1) {
-				o_33(table, &i, &j, &k);
-				*sum += 9;
-				j++;
-			}
-		}
-		if (flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			o_4(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 21, i, j, k, n, sum);
-			if (flag == -1) {
-				o_44(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
+		if (table[0][n - 1] != n * n && flag == 23 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 			k++;
-			o_5(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 17, i, j, k, n, sum);
-			if (flag == -1) {
-				o_55(table, &i, &j, &k);
-				*sum += 9;
-				k--;
-			}
-		}
-		if (flag == 21 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			o_6(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 39, i, j, k, n, sum);
-			if (flag == -1) {
-				o_66(table, &i, &j, &k);
-				*sum += 9;
-				k++;
-			}
-		}
-		if (flag == 11 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			o_7(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 49, i, j, k, n, sum);
-			if (flag == -1) {
-				o_77(table, &i, &j, &k);
-				*sum += 9;
-				j--;
-			}
-		}
-		if (flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
+			K++;
 			o_8(table, &i, &j, &k);
-			*sum -= 9;
-			flag = cub_9(table, 23, i, j, k, n, sum);
-			if (flag == -1) {
-				o_88(table, &i, &j, &k);
-				*sum += 9;
+			flag = 3;
+		}
+			}
+	}
+
+	//СЃС‚Р°Р»Рѕ РІР»РѕРј... РїСЂРѕСЃС‚Рѕ РІСЃС‚Р°РІР»СЋ 2 СЃР»СѓС‡Р°СЏ... (((
+	else {
+		if (*sum != 9 && table[0][n - 1] == 0) {
+			//С†РµРЅС‚СЂРѕРІС‹e
+			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
+				if (table[0][n - 1] != n * n && flag == 13 && k != n - 1 && table[j][k + 1] == 0) {
+					k++;
+					c_1(table, &i, &j, &k);
+				}
+				else if (table[j + 1][k] == 0) {
+					j++;
+					c_1(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_11(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 13) k--;
+					else j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				c_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_11(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
+				if (table[0][n - 1] != n * n && flag == 13 && k != n - 1 && table[j][k + 1] == 0) {
+					k++;
+					c_4(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && j != n - 1 && table[j + 1][k] == 0) {
+					j++;
+					c_4(table, &i, &j, &k);
+				}
+
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_44(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 13) k--;
+					else j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				c_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_44(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 29 || flag == 31) {
+				if (table[0][n - 1] != n * n && flag == 31 && k != 0 && table[j][k - 1] == 0) {
+					k--;
+					c_2(table, &i, &j, &k);
+				}
+				else if (J != n / 3 - 1 && j != n - 1 && table[j + 1][k] == 0) {
+					j++;
+					c_2(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_22(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 31) k++;
+					else j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				c_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_22(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 29 || flag == 31) {
+				if (table[0][n - 1] != n * n && flag == 31 && k != 0 && table[j][k - 1] == 0) {
+					k--;
+					c_8(table, &i, &j, &k);
+				}
+				else if (table[j + 1][k] == 0) {
+					j++;
+					c_8(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_88(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 31) k++;
+					else j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 21 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				c_8(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_88(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 19 || flag == 41) {
+				if (table[0][n - 1] != n * n && flag == 19 && k != n - 1 && table[j][k + 1] == 0) {
+					k++;
+					c_3(table, &i, &j, &k);
+				}
+				else if (j != 0 && table[j - 1][k] == 0) {
+					j--;
+					c_3(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_33(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 19) k--;
+					else j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				c_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_33(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 19 || flag == 41) {
+				if (table[0][n - 1] != n * n && flag == 19 && k != n - 1 && table[j][k + 1] == 0) {
+					k++;
+					c_5(table, &i, &j, &k);
+				}
+				else if (j != 0 && table[j - 1][k] == 0) {
+					j--;
+					c_5(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_55(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 19) k--;
+					else j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && j != 0 && table[j - 1][k] == 0) {
 				j--;
+				c_5(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_55(table, &i, &j, &k);
+					j++;
+					*sum += 9;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 43 || flag == 37) {
+				if (table[0][n - 1] != n * n && flag == 37 && k != 0 && table[j][k - 1] == 0) {
+					k--;
+					c_6(table, &i, &j, &k);
+				}
+				else if (j != 0 && table[j - 1][k] == 0) {
+					j--;
+					c_6(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_66(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 37) k++;
+					else j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 33 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				c_6(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_66(table, &i, &j, &k);
+					*sum += 9;
+					j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 43 || flag == 37) {
+				if (table[0][n - 1] != n * n && flag == 37 && k != 0 && table[j][k - 1] == 0) {
+					k--;
+					c_7(table, &i, &j, &k);
+				}
+				else if (j != 0 && table[j - 1][k] == 0) {
+					j--;
+					c_7(table, &i, &j, &k);
+				}
+				*sum -= 9;
+				f = flag;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_77(table, &i, &j, &k);
+					*sum += 9;
+					if (f == 37) k++;
+					else j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 47 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				c_7(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					c_77(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+
+			//Р·РёРіР·Р°РіРё
+			if (table[0][n - 1] != n * n && flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				zzHOR_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzHOR_11(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				zzHOR_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzHOR_22(table, &i, &j, &k);
+					j++;
+					*sum += 9;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 33 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				zzHOR_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzHOR_33(table, &i, &j, &k);
+					j++;
+					*sum += 9;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				zzHOR_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzHOR_44(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				zzVER_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzVER_11(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				zzVER_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzVER_22(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 47 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				zzVER_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzVER_33(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 21 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				zzVER_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					zzVER_44(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+
+			//РѕР±С…РѕРґРЅС‹Рµ 
+			if (table[0][n - 1] != n * n && flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				o_1(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 11, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_11(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 47 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				o_2(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 33, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_22(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 33 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				o_3(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 47, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_33(table, &i, &j, &k);
+					*sum += 9;
+					j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				o_4(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 21, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_44(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
+				k++;
+				o_5(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 17, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_55(table, &i, &j, &k);
+					*sum += 9;
+					k--;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 21 && k != 0 && table[j][k - 1] == 0) {
+				k--;
+				o_6(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 39, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_66(table, &i, &j, &k);
+					*sum += 9;
+					k++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 11 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				o_7(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 49, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_77(table, &i, &j, &k);
+					*sum += 9;
+					j++;
+				}
+			}
+			if (table[0][n - 1] != n * n && flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
+				j++;
+				o_8(table, &i, &j, &k);
+				*sum -= 9;
+				int result = cub_9(table, 23, i, j, k, n, sum, tab, I, J, K);
+				if (result == -1 && table[0][n - 1] != n * n) {
+					o_88(table, &i, &j, &k);
+					*sum += 9;
+					j--;
+				}
+			}
+
+
+		}
+
+		//РїРѕСЃР»РµРґРЅРёР№ РєРІР°РґСЂР°РЅС‚
+		else if (*sum == 9) {
+			if (table[0][n - 1] != n * n && flag == 33 && j != 0 && table[j - 1][k] == 0) {
+				j--;
+				o_2(table, &i, &j, &k);
+				flag = 3;
+			}
+			if (table[0][n - 1] != n * n && flag == 23 && K != n / 3 - 1 && table[j][k + 1] == 0) {
+				k++;
+				o_8(table, &i, &j, &k);
+				flag = 3;
 			}
 		}
 	}
 
-	//последний квадрант
-	else if (*sum == 9){ 
-		if (flag == 11 && j != 0 && table[j - 1][k] == 0) {
-			j--;
-			o_1(table, &i, &j, &k);
-			flag = 1;
-		}
-		if (flag == 33 && j != 0 && table[j - 1][k] == 0) {
-			j--;
-			o_2(table, &i, &j, &k);
-			flag = 3;
-		}
-		if (flag == 47 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			o_3(table, &i, &j, &k);
-			flag = 7;
-		}
-		if (flag == 21 && k != 0 && table[j][k - 1] == 0) {
-			k--;
-			o_4(table, &i, &j, &k);
-			flag = 1;
-		}
-		if (flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			o_5(table, &i, &j, &k);
-			flag = 7;
-		}
-		if (flag == 39 && j != n - 1 && table[j + 1][k] == 0) {
-			j++;
-			o_6(table, &i, &j, &k);
-			flag = 9;
-		}
-		if (flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			o_7(table, &i, &j, &k);
-			flag = 9;
-		}
-		if (flag == 23 && k != n - 1 && table[j][k + 1] == 0) {
-			k++;
-			o_8(table, &i, &j, &k);
-			flag = 3;
-		}
-	}
+//	printf("flagEND = %d\n", flag);
 
 	if (table[0][n - 1] == n * n)
 		return 0;
 	else /*if (table[0][n - 1] != 0 && table[0][n - 1] != n * n)*/
 		return -1;
 }
-void cub(int n) {
-	
+int** cub(int n, int** tab) {
 	if (n == 1)
 		printf("1");
 	else if (n == 2)
@@ -1180,17 +1698,17 @@ void cub(int n) {
 			table[i] = (int*)malloc(n * sizeof(table));
 		int j;
 
-		//зануляем
-		for (i = 0; i < n; i++) { 
+		//Р·Р°РЅСѓР»СЏРµРј
+		for (i = 0; i < n; i++) {
 			for (j = 0; j < n; j++)
 				table[i][j] = 0;
 		}
 
-		j = 0 /*строки*/;
-		int k = 0 /*столбцы*/;
+		j = 0 /*СЃС‚СЂРѕРєРё*/;
+		int k = 0 /*СЃС‚РѕР»Р±С†С‹*/;
 
 		i = 1;
-		//первый квадрант всегда одинаковый drurddlld
+		//РїРµСЂРІС‹Р№ РєРІР°РґСЂР°РЅС‚ РІСЃРµРіРґР° РѕРґРёРЅР°РєРѕРІС‹Р№ drurddlld
 		table[j++][k] = i++;
 		table[j][k++] = i++;
 		table[j--][k] = i++;
@@ -1201,7 +1719,7 @@ void cub(int n) {
 		table[j][k--] = i++;
 		table[j++][k] = i++;
 
-		//второй квадрант
+		//РІС‚РѕСЂРѕР№ РєРІР°РґСЂР°РЅС‚
 		if ((n * n) % 4 == 0) { //ddrrulurr
 			table[j++][k] = i++;
 			table[j++][k] = i++;
@@ -1229,21 +1747,34 @@ void cub(int n) {
 
 			flag = 39;
 		}
-
 		int sum = n * n - 18;
-		//while (sum > 0) {
-			flag = cub_9(table, flag, i, j, k, n, &sum);
-			printf("flag=%d\n", flag);
-		//}
 
-		//печатаем
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++)
-				printf("%3d ", table[i][j]);
+
+		if (tab == 0) {
+			flag = cub_9(table, flag, i, j, k, n, &sum, 0, -1, -1, -1);
+			//printf("flag=%d\n", flag);
+
+			//РїРµС‡Р°С‚Р°РµРј
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++)
+					printf("%3d ", table[i][j]);
+				printf("\n");
+			}
+			printf("\n");
+		}
+		else {
+			flag = cub_9(table, flag, i, j, k, n, &sum, tab, 2, 1, 0);
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n; j++)
+					printf("%3d ", table[i][j]);
+				printf("\n");
+			}
 			printf("\n");
 		}
 
+		return table;
 	}
+
 }
 
 
@@ -1255,14 +1786,15 @@ int check(int n) {
 		n /= 4;
 	if (n == 1)
 		return 1;
-	else 
+	else
 		return 0;
 }
 
 
-//сделать менюшку
+//СЃРґРµР»Р°С‚СЊ РјРµРЅСЋС€РєСѓ
 int main() {
-	int n, prov;
+	int n, prov, i;
+	int** tab = 0;
 
 	printf("n=");
 	scanf("%d", &n);
@@ -1271,6 +1803,13 @@ int main() {
 	prov = check(n * n);
 	if (prov == 0)
 		printf("Prostite");
-	else 
-		cub(n);
+	else {
+		if (n > 10) {
+			int N = n / 3;
+			tab = cub(N, 0);
+			cub(n, tab);
+		}
+		else
+			cub(n, 0);
+	}
 }
