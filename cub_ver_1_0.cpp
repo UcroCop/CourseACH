@@ -18,10 +18,10 @@ int cub_9(int** table, int flag, int n, int** tab) {
 	int f;
 
 
-	//вызовы паттернов (n<10)
-	if (tab != 0) {
+	//РІС‹Р·РѕРІС‹ РїР°С‚С‚РµСЂРЅРѕРІ (n<10)
+  	if (tab != 0) {
 		if (sum != 9 && table[0][n - 1] == 0) {
-			//центровыe
+			//С†РµРЅС‚СЂРѕРІС‹e
 			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
 				if (table[0][n - 1] != n * n && flag == 13 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 					k++;
@@ -810,7 +810,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 				}
 			}
 
-			//зигзаги
+			//Р·РёРіР·Р°РіРё
 			if (table[0][n - 1] != n * n && flag == 17 && J != n / 3 - 1 && tab[J + 1][K] - tab[J][K] == 1) {
 				j++;
 				J++;
@@ -1102,7 +1102,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 				}
 			}
 
-			//обходные 
+			//РѕР±С…РѕРґРЅС‹Рµ 
 			if (table[0][n - 1] != n * n && flag == 49 && K != n / 3 - 1 && tab[J][K + 1] - tab[J][K] == 1) {
 				k++;
 				K++;
@@ -1395,7 +1395,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 			}
 		}
 
-		//последний квадрант
+		//РїРѕСЃР»РµРґРЅРёР№ РєРІР°РґСЂР°РЅС‚
 		else if (sum == 9) {
 		if (table[0][n - 1] != n * n && flag == 33 && J != 0 && tab[J - 1][K] - tab[J][K] == 1) {
 			j--;
@@ -1434,10 +1434,10 @@ int cub_9(int** table, int flag, int n, int** tab) {
 			}
 	}
 
-	//стало влом... просто вставлю 2 случая... (((
+	//СЃС‚Р°Р»Рѕ РІР»РѕРј... РїСЂРѕСЃС‚Рѕ РІСЃС‚Р°РІР»СЋ 2 СЃР»СѓС‡Р°СЏ... (((
 	else {
 		if (sum != 9 && table[0][n - 1] == 0) {
-			//центровыe
+			//С†РµРЅС‚СЂРѕРІС‹e
 			if (table[0][n - 1] != n * n && flag == 13 || flag == 27) {
 				if (table[0][n - 1] != n * n && flag == 13 && k != n - 1 && table[j][k + 1] == 0) {
 					k++;
@@ -2146,7 +2146,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 				}
 			}
 
-			//зигзаги
+			//Р·РёРіР·Р°РіРё
 			if (table[0][n - 1] != n * n && flag == 17 && j != n - 1 && table[j + 1][k] == 0) {
 				j++;
 				//zzHOR_1(table, &i, &j, &k);
@@ -2422,7 +2422,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 				}
 			}
 
-			//обходные 
+			//РѕР±С…РѕРґРЅС‹Рµ 
 			if (table[0][n - 1] != n * n && flag == 49 && k != n - 1 && table[j][k + 1] == 0) {
 				k++;
 				//o_1(table, &i, &j, &k);
@@ -2701,7 +2701,7 @@ int cub_9(int** table, int flag, int n, int** tab) {
 
 		}
 
-		//последний квадрант
+		//РїРѕСЃР»РµРґРЅРёР№ РєРІР°РґСЂР°РЅС‚
 		else if (sum == 9) {
 			if (table[0][n - 1] != n * n && flag == 33 && j != 0 && table[j - 1][k] == 0) {
 				j--;
@@ -2758,17 +2758,17 @@ int** cub(int n, int** tab) {
 			table[i] = (int*)malloc(n * sizeof(table));
 		
 
-		//зануляем
+		//Р·Р°РЅСѓР»СЏРµРј
 		for (i = 0; i < n; i++) {
 			for (j = 0; j < n; j++)
 				table[i][j] = 0;
 		}
 
-		j = 0 /*строки*/;
-		k = 0 /*столбцы*/;
+		j = 0 /*СЃС‚СЂРѕРєРё*/;
+		k = 0 /*СЃС‚РѕР»Р±С†С‹*/;
 
 		i = 1;
-		//первый квадрант всегда одинаковый drurddlld
+		//РїРµСЂРІС‹Р№ РєРІР°РґСЂР°РЅС‚ РІСЃРµРіРґР° РѕРґРёРЅР°РєРѕРІС‹Р№ drurddlld
 		table[j++][k] = i++;
 		table[j][k++] = i++;
 		table[j--][k] = i++;
@@ -2777,9 +2777,10 @@ int** cub(int n, int** tab) {
 		table[j++][k] = i++;
 		table[j][k--] = i++;
 		table[j][k--] = i++;
-		table[j++][k] = i++;
-
-		//второй квадрант
+		table[j][k] = i++;
+		flag = 17;
+/*
+		//РІС‚РѕСЂРѕР№ РєРІР°РґСЂР°РЅС‚
 		if ((n * n) % 4 == 0) { //ddrrulurr
 			table[j++][k] = i++;
 			table[j++][k] = i++;
@@ -2806,16 +2807,16 @@ int** cub(int n, int** tab) {
 			table[j][k] = i++;
 
 			flag = 39;
-		}
-		sum = n * n - 18;
-
+		}*/
+		//sum = n * n - 18;
+		sum = n * n - 9;
 
 		if (tab == 0) {
 			I = -1, J = -1, K = -1;
 			flag = cub_9(table, flag, n, 0);
 			//printf("flag=%d\n", flag);
 
-			//печатаем
+			//РїРµС‡Р°С‚Р°РµРј
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < n; j++)
 					printf("%3d ", table[i][j]);
@@ -2823,8 +2824,8 @@ int** cub(int n, int** tab) {
 			}
 			printf("\n");
 		}
-		else {
-			I = 2, J = 1, K = 0;
+		else {//J=1;
+			I = 2, J = 0, K = 0;
 			flag = cub_9(table, flag, n, tab);
 			for (int i = 0; i < n; i++) {
 				for (int j = 0; j < n; j++)
@@ -2853,7 +2854,7 @@ int check(int n) {
 }
 
 
-//сделать менюшку
+//СЃРґРµР»Р°С‚СЊ РјРµРЅСЋС€РєСѓ
 int main() {
 	int n, prov, i;
 	int** tab = 0;
