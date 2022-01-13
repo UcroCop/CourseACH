@@ -2868,7 +2868,7 @@ int main() {
 
 	prov = check(n * n);
 	if (prov == 0)
-		printf("Prostite");
+		printf("Path not found\n");
 	else {
 		if (n > 10) {
 			int N = n / 3;
