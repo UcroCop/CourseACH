@@ -2764,10 +2764,20 @@ int** cub(int n, int** tab) {
 				table[i][j] = 0;
 		}
 
-		j = 0 /*строки*/;
-		k = 0 /*столбцы*/;
+		__asm {
+			mov eax, j
+			xor eax, eax
+			mov j, eax
+		
+			mov eax, k
+			xor eax, eax
+			mov k, eax
+			mov i, 1}
 
-		i = 1;
+		/*j = 0 /*строки*/;
+		/*k = 0 /*столбцы*/;
+
+		//i = 1;
 		//первый квадрант всегда одинаковый drurddlld
 		table[j++][k] = i++;
 		table[j][k++] = i++;
@@ -2881,4 +2891,8 @@ int main() {
 
 	t = clock() - t;
 	printf("\nTime - %f\n", ((double)t) / CLOCKS_PER_SEC);
+
+	__asm {
+	inc t}
+	
 }
